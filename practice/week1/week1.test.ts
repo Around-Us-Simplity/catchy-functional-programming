@@ -8,5 +8,5 @@ test("wee1 test", () => {
   expect(logSpy).toHaveBeenCalledWith("hide");
   expect(logSpy).toHaveBeenCalledWith("show");
   expect(logSpy).toHaveBeenCalledWith("hide");
-  expect(logSpy).toHaveBeenCalledWith(0.05);
+  expect(logSpy).toHaveBeenCalledWith(0.12);
 });

@@ -42,6 +42,7 @@ function updateTaxDom() {
 }
 
 function calcCartTotal() {
+  addItemToCart("슬랙스", 7);
   shoppingCartTotal = 0;
   for (let i = 0; i < shoppingCart.length; i++) {
     const item = shoppingCart[i];
