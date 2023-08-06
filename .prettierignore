@@ -1,0 +1,10 @@
+# Ignore artifacts:
+node_modules/
+.vscode/
+
+.yarn/**/*
+
+.DS_Store
+
+.pnp.cjs
+.pnp.loader.mjs
