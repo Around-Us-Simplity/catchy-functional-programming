@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * 카배열의 push, pop, shift, unshift, splice 메서드를 카피-온-라이트로 구현하기
  * @param array

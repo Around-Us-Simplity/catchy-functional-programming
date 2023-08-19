@@ -9,7 +9,8 @@
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint": "eslint --ext .ts, .",
     "lint:eslint:fix": "eslint --fix --ext .ts .",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
