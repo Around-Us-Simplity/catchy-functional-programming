@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * 카피 온 라이트 적용해보기
  */
@@ -12,6 +13,7 @@ function addContact(email: string) {
 
 function submitFormHandler(event: SubmitEvent) {
   const form = event.target as HTMLFormElement;
+  //@ts-ignore
   const email = form.elements.email.value as string;
   mailingList = addContact(email);
 }
