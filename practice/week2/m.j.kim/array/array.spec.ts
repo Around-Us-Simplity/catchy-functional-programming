@@ -32,6 +32,7 @@ describe("array method to pure function", () => {
     expect(splice(arr, 0, 1)).toEqual([2, 3]);
     expect(splice(arr, 3, 0, 4, 5, 6)).toEqual([1, 2, 3, 4, 5, 6]);
     expect(splice(arr, 1, 2, 4, 5, 6)).toEqual([1, 4, 5, 6]);
+    expect(splice(arr, 9999)).toEqual([1, 2, 3]);
   });
 
   it("more test code with more sample arrays", () => {
