@@ -38,7 +38,7 @@
       <td>- 계층형 설계 I<br />- 계층형 설계 II </td>
     </tr>
      <tr>
-      <td></td>
+      <td>9월 3일</td>
       <td>Ch 10 ~ 12</td>
       <td>PART 2. 일급 추상</td>
       <td>- 일급 함수 I<br />- 일급 함수 II<br />- 함수형</td>
