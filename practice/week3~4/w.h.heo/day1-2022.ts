@@ -5,28 +5,42 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const inputPath = path.join(__dirname, "..", "day1-2022.txt");
+function readFile(): string[][] {
+  const inputPath = path.join(__dirname, "..", "day1-2022.txt");
 
-const input = fs
-  .readFileSync(inputPath)
-  .toString()
-  .split("\n\n")
-  .map(v => v.split("\n"));
+  return fs
+    .readFileSync(inputPath)
+    .toString()
+    .split("\n\n")
+    .map(v => v.split("\n"));
+}
 
-const caloriesTotalArray = input.map(v => v.reduce((acc, v) => acc + +v, 0));
+function sum(a: number, b: number) {
+  return a + b;
+}
 
-const part1Result = Math.max(...caloriesTotalArray);
+function arraySum<T>(array: T[]) {
+  return array.reduce((acc, v) => sum(acc, +v), 0);
+}
 
-console.log(part1Result);
+function part1() {
+  return readFile().reduce((acc, val) => {
+    const total = arraySum<string>(val);
+    if (acc < total) {
+      return total;
+    }
 
-const descCaloriesTotal = caloriesTotalArray.sort((a, b) => b - a);
+    return acc;
+  }, 0);
+}
 
-const part2Result = descCaloriesTotal.reduce((acc, v, i) => {
-  if (i < 3) {
-    acc += +v;
-  }
+console.log(part1());
 
-  return acc;
-}, 0);
+function part2(count: number) {
+  const descArray = readFile()
+    .map(v => v.reduce((acc, v) => sum(acc, +v), 0))
+    .sort((a, b) => b - a);
+  return arraySum<number>(descArray.slice(0, count));
+}
 
-console.log(part2Result);
+console.log(part2(3));
