@@ -10,8 +10,9 @@ export const stringToHalf = (el: string) => [
   el.slice(Math.floor(el.length / 2)),
 ];
 
-export const firstReducer = (acc: number, [one, two]: string[]) => {
-  if (!one) return acc;
+export const firstReducer = (acc: number, el: string) => {
+  if (!el) return acc;
+  const [one, two] = stringToHalf(el);
   let i: number, str: string;
   for (i = 0; i < one.length; i++) {
     str = one[i];

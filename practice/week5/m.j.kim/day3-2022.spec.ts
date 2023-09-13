@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import { stringToHalf, threeStringElement, firstReducer, secondReducer } from "./day3-2022";
+import { threeStringElement, firstReducer, secondReducer } from "./day3-2022";
 
 describe("first day", () => {
   const inputPath = path.join(__dirname, "..", "day3-2022.txt");
@@ -11,7 +11,7 @@ describe("first day", () => {
     /**
      * What is the sum of the priorities of those item types?
      */
-    const firstAnswer = input.map(stringToHalf).reduce(firstReducer, 0);
+    const firstAnswer = input.reduce(firstReducer, 0);
     expect(firstAnswer).toBeTruthy();
   });
 
