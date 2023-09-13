@@ -3,7 +3,7 @@ const scoreTable = new Map(
 );
 
 const getShareArray = (one: string, two: string): string[] =>
-  [...one].reduce<string[]>((acc, str) => (two.includes(str) ? [...acc, str] : acc), []);
+  [...one].reduce<string[]>((acc, str) => (two.includes(str) && !acc.includes(str) ? [...acc, str] : acc), []);
 
 export const stringToHalf = (el: string) => [
   el.slice(0, Math.floor(el.length / 2)),
