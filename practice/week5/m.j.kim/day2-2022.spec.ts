@@ -1,36 +1,25 @@
 import * as fs from "fs";
 import * as path from "path";
-import { ScoreCalculator, SecondScoreCalculator } from "./day2-2022";
+import { ScoreCalculator, SecondScoreCalculator, dayTwoReducer } from "./day2-2022";
 
 describe("first day", () => {
   const inputPath = path.join(__dirname, "..", "day2-2022.txt");
 
   const input = fs.readFileSync(inputPath).toString().split("\n");
 
-  type destructuredArray = ["A" | "B" | "C", "X" | "Y", "Z"];
-
   it("first answer", () => {
     /**
-     * How many total Calories is that Elf carrying?
+     * What would your total score be if everything goes exactly according to your strategy guide?
      */
-    const firstAnswer = input.reduce((acc, score) => {
-      if (!score) return acc;
-      const [enemy, me] = score.split(" ") as destructuredArray;
-      return acc + ScoreCalculator[enemy][me];
-    }, 0);
+    const firstAnswer = input.reduce(dayTwoReducer(ScoreCalculator), 0);
     expect(firstAnswer).toBeTruthy();
   });
 
   it("second answer", () => {
     /**
-     * Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
+     * what would your total score be if everything goes exactly according to your strategy guide?
      */
-    const secondAnswer = input?.reduce((acc, score) => {
-      if (!score) return acc;
-      const [enemy, me] = score.split(" ") as destructuredArray;
-      return acc + SecondScoreCalculator[enemy][me];
-    }, 0);
-    console.log(secondAnswer);
+    const secondAnswer = input?.reduce(dayTwoReducer(SecondScoreCalculator), 0);
     expect(secondAnswer).toBeTruthy();
   });
 });

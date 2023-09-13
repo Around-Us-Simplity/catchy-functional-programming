@@ -1,3 +1,5 @@
+type destructuredArray = ["A" | "B" | "C", "X" | "Y" | "Z"];
+
 export const ScoreCalculator = {
   A: {
     X: 1 + 3,
@@ -32,4 +34,12 @@ export const SecondScoreCalculator = {
     Y: 6,
     Z: 7,
   },
+};
+
+type SCalculatorType = typeof ScoreCalculator;
+
+export const dayTwoReducer = (calculator: SCalculatorType) => (acc: number, score: string) => {
+  if (!score) return acc;
+  const [enemy, me] = score.split(" ") as destructuredArray;
+  return acc + calculator[enemy][me];
 };
