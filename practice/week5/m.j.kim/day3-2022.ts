@@ -11,16 +11,9 @@ export const stringToHalf = (el: string) => [
 ];
 
 export const firstReducer = (acc: number, el: string) => {
-  if (!el) return acc;
   const [one, two] = stringToHalf(el);
-  let i: number, str: string;
-  for (i = 0; i < one.length; i++) {
-    str = one[i];
-    if (two.includes(str)) {
-      return acc + (scoreTable.get(str) || 0);
-    }
-  }
-  return acc;
+  const val = [...one].find(str => two.includes(str)) || "";
+  return acc + (scoreTable.get(val) || 0);
 };
 
 export const threeStringElement = (acc: string[][], el: string, idx: number) =>
