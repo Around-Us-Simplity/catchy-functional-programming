@@ -13,5 +13,8 @@
     "strict": true
   },
   "include": ["**/*.ts", "@types"],
-  "exclude": ["dist", "build", "node_modules", ".yarn"]
+  "exclude": ["dist", "build", "node_modules", ".yarn"],
+  "ts-node": {
+    "esm": true
+  }
 }
